@@ -8,7 +8,12 @@
       "type": "select",
       "required": true,
       "options": {
-        "values": ["artist", "volunteer", "admin", "guest"]
+        "values": [
+          "artist",
+          "volunteer",
+          "admin",
+          "guest"
+        ]
       }
     },
     {
@@ -65,20 +70,20 @@
   "indexes": [
     {
       "name": "idx_role",
-      "fields": ["role"]
+      "fields": [
+        "role"
+      ]
     },
     {
       "name": "idx_profile_complete",
-      "fields": ["is_profile_complete"]
+      "fields": [
+        "is_profile_complete"
+      ]
     }
   ],
-  "rules": {
-    "list": {
-      "filter": "role != 'guest'"
-    },
-    "view": true,
-    "create": true,
-    "update": true,
-    "delete": false
-  }
+  "listRule": "role != 'guest'",
+  "viewRule": null,
+  "createRule": null,
+  "updateRule": null,
+  "deleteRule": null
 }

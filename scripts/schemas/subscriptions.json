@@ -36,7 +36,12 @@
       "required": true,
       "options": {
         "maxSelect": 1,
-        "values": ["active", "canceled", "past_due", "incomplete"]
+        "values": [
+          "active",
+          "canceled",
+          "past_due",
+          "incomplete"
+        ]
       }
     },
     {
@@ -45,7 +50,11 @@
       "required": true,
       "options": {
         "maxSelect": 1,
-        "values": ["free", "pro", "enterprise"]
+        "values": [
+          "free",
+          "pro",
+          "enterprise"
+        ]
       }
     },
     {
@@ -75,12 +84,16 @@
     {
       "name": "idx_subscriptions_user",
       "unique": true,
-      "fields": ["user"]
+      "fields": [
+        "user"
+      ]
     },
     {
       "name": "idx_subscriptions_stripe",
       "unique": true,
-      "fields": ["stripe_subscription_id"]
+      "fields": [
+        "stripe_subscription_id"
+      ]
     }
   ],
   "listRule": "@request.auth.id != \"\"",

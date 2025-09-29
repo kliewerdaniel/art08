@@ -28,7 +28,12 @@
       "required": true,
       "options": {
         "maxSelect": 1,
-        "values": ["pending", "processing", "completed", "failed"]
+        "values": [
+          "pending",
+          "processing",
+          "completed",
+          "failed"
+        ]
       }
     },
     {
@@ -97,11 +102,17 @@
   "indexes": [
     {
       "name": "idx_llm_jobs_user",
-      "fields": ["user", "created"]
+      "fields": [
+        "user",
+        "created"
+      ]
     },
     {
       "name": "idx_llm_jobs_status",
-      "fields": ["status", "created"]
+      "fields": [
+        "status",
+        "created"
+      ]
     }
   ],
   "listRule": "@request.auth.id != \"\"",

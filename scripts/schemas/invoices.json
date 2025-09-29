@@ -55,7 +55,13 @@
       "required": true,
       "options": {
         "maxSelect": 1,
-        "values": ["draft", "open", "paid", "void", "uncollectible"]
+        "values": [
+          "draft",
+          "open",
+          "paid",
+          "void",
+          "uncollectible"
+        ]
       }
     },
     {
@@ -73,7 +79,9 @@
       "options": {
         "maxSelect": 1,
         "maxSize": 10485760,
-        "mimeTypes": ["application/pdf"],
+        "mimeTypes": [
+          "application/pdf"
+        ],
         "thumbs": []
       }
     },
@@ -113,16 +121,24 @@
   "indexes": [
     {
       "name": "idx_invoices_user",
-      "fields": ["user", "created"]
+      "fields": [
+        "user",
+        "created"
+      ]
     },
     {
       "name": "idx_invoices_stripe",
       "unique": true,
-      "fields": ["stripe_invoice_id"]
+      "fields": [
+        "stripe_invoice_id"
+      ]
     },
     {
       "name": "idx_invoices_status",
-      "fields": ["status", "due_date"]
+      "fields": [
+        "status",
+        "due_date"
+      ]
     }
   ],
   "listRule": "@request.auth.id != \"\"",

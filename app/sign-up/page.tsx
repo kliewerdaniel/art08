@@ -79,12 +79,10 @@ export default function SignUpPage() {
 
     try {
       // Use PocketBase authentication for user creation
+      // Note: Custom profile fields are not handled during signup due to schema limitations
       const user = await auth.signUp({
         email: formData.email,
-        password: formData.password,
-        first_name: formData.firstName,
-        last_name: formData.lastName,
-        role: formData.role as 'artist' | 'volunteer' | 'admin' | 'guest'
+        password: formData.password
       })
 
       toast({

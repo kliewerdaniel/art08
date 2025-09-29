@@ -163,14 +163,14 @@ export const auth = {
   async signUp(data: {
     email: string
     password: string
-    first_name: string
-    last_name: string
-    role: User['role']
   }) {
     try {
+      // Create user with auth fields only
+      // Note: Custom profile fields should be saved to separate tables after signup
       const user = await pb.collection('users').create({
-        ...data,
-        is_profile_complete: false
+        email: data.email,
+        password: data.password,
+        passwordConfirm: data.password
       })
 
       // Auto-login after signup
